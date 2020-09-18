@@ -1,0 +1,64 @@
+<body class="scrollbar scrollbar-custom">
+	<!--*HEAD***********************************************-->
+	<!--****************************************************-->
+	<nav class="grid2">
+
+		<div>
+			<button id="navMenu" class="" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button><button class="masterNavButtonsToggle" class="" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
+		</div>
+
+			<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
+	</nav>
+
+	<section id="websiteNav">
+		<!--		<div style="display:none;" class="bibleTimelines">-->
+		<h3 style="display: none">Bible Timelines</h3>
+		<ul style="display: none">
+			{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li style="display: none"><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}
+		</ul>
+
+		<h3 style="display: none">Bible Timelines</h3>
+		<ul style="display: none">
+			{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li style="display: none"><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li style="display: none"><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li style="display: none"><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}{% for page in site.pages %}
+			{% if page.categories contains "Timeline" %}
+
+			<li style="display: none"><a href="{{page.url}}">{{page.title}}</a></li>
+
+			{% endif %}
+			{% endfor %}
+		</ul>
+		<!--</div>
+		-->
+
+	</section>
+	<!--****************************************************-->

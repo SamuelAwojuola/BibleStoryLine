@@ -1,0 +1,18 @@
+---
+layout: default
+title: "BibleTimelines Navigation"
+categories: [Timeline]
+---
+
+	<h1>Bible TimeLines</h1>
+	<p>A collection of Bible Timelines</p>
+
+	<ul id="nav">
+		{% for page in site.pages %}
+		    {% if page.categories contains "Timeline" %}
+
+		        <li><a href="{{page.url}}">{{page.title}}</a></li>
+
+		    {% endif %}
+		{% endfor %}
+	</ul>
