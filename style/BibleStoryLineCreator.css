@@ -19,7 +19,8 @@
 	padding-bottom: 0;
 }
 
-#websiteNav ul, #websiteNav > ol {
+#websiteNav ul,
+#websiteNav > ol {
 	margin-top: 0;
 	padding-top: 0;
 	padding-left: 5px;
@@ -37,11 +38,11 @@
 }
 
 #websiteNav li > a:hover {
-	text-decoration:underline;
+	text-decoration: underline;
 	color: red;
 }
 
-.bibleTimelines  li:hover {
+.bibleTimelines li:hover {
 	font-color: red;
 }
 
@@ -52,10 +53,10 @@
 	font-size: 23px;
 	left: 0;
 	*/
-	background-color: #e0f6ff !important;
+	background-color: darkred !important;
 	padding: 0;
 	margin-top: 10px;
-	color: black;
+	color: white;
 	font-weight: bold;
 }
 
@@ -77,7 +78,7 @@
 	left: 0;
 	display: grid;
 	grid-template-columns: auto 1fr auto;
-    place-items: center;
+	place-items: center;
 	margin-bottom: 5px;
 	box-shadow: 0px 3px 2px -3px black;
 	height: 50px;
@@ -86,7 +87,7 @@
 nav.gid2 > h1 {
 	padding: 0;
 	margin: 0;
-/*	padding-left: 25px;*/
+	/*	padding-left: 25px;*/
 }
 
 .grid2 button {
@@ -182,7 +183,7 @@ table > h6 {
 	margin-top: 3px;
 	padding-right: 0;
 	cursor: pointer;
-/*	font-style: italic;*/
+	/*	font-style: italic;*/
 	font-weight: bold;
 	width: 100%;
 	min-height: 32px;
@@ -429,7 +430,7 @@ input {
 	width: 93%;
 }
 
-select {
+#alternateStoryLineEditorButtons select {
 	display: block;
 	width: 98%;
 }
@@ -485,49 +486,103 @@ td > div {
 
 /*DETAILS SECTIONS*/
 #detailsSection {
-	resize:both;
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: auto 1fr;
+	grid-row-gap: 2px;
+	grid-column-gap: 2px;
+
+	resize: both;
 	position: fixed;
-	top: 500px;
-	left: 1173px;
+	top: 300px;
+	left: 40px;
+	min-height: 350px;
+	max-height: 600px;
+	width: 700px;
 	min-width: 500px;
-	min-height: 500px;
 	border-radius: 5px;
 	z-index: 3;
-	padding-bottom: 20px;
-/*	flex-direction: column;*/
+	overflow: auto;
+	background-color: beige;
+	border: 1px solid black;
 }
 
 #detailsSectionheader {
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 3;
+
 	height: 20px;
 	margin-top: 0;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	margin-bottom: 0;
-	border: 1px solid grey;
+	border-bottom: 1px solid grey;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background-color: #f0de92;
 }
-
-#detailsSectionBody {
-	display: flex;
+#detailsSectionheader h3 {
+	display: inline;
 }
 
-#detailsSectionBody h4 {
-	margin-bottom: 0;
+/*WYSIWYG*/
+#wysiwygEditor {
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 3;
+
+	/*	padding-left: 5px;*/
+	/*	border-right: 2px solid grey;*/
 }
 
-#detailsSectionBody ul {
+/**********************/
+
+#detailsKeyFacts {
+	grid-row-start: 2;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 2;
+
+	width: 130px;
+
+	position: relative;
+	padding-left: 8px;
+	padding-right: 8px;
+	background-color: #f0f0d2;
+	border: 2px solid grey;
+	border-top: 1px solid grey;
+	/*
+	border-right: 1px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+*/
+	border-bottom-left-radius: 5px;
+}
+
+#detailsKeyFacts h4 {
+	/*	margin-bottom: 0;*/
+}
+
+#detailsKeyFacts ul {
 	margin-top: 0;
 	padding-left: 20px;
 }
 
 #detailsSummary {
-	height: 260px;
-	width: 350px;
-	border-bottom: 2px solid grey;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	grid-column-start: 2;
+	grid-column-end: 3;
+
+	border-top: 1px solid grey;
 	border-right: 2px solid grey;
+	border-bottom: 2px solid grey;
+	border-left: 1px solid grey;
 	border-bottom-right-radius: 5px;
+	padding-left: 8px;
 	padding-right: 8px;
 	text-align: justify;
 	overflow-y: scroll;
@@ -537,17 +592,6 @@ td > div {
 
 #detailsSummary > div > p:empty::before {
 	content: "Insert details for selected cell here";
-}
-
-#detailsKeyFacts {
-	position: relative;
-	padding-left: 8px;
-	padding-right: 8px;
-	background-color: #f0f0d2;
-	border-left: 2px solid grey;
-	border-right: 2px solid grey;
-	border-bottom: 2px solid grey;
-	border-bottom-left-radius: 5px;
 }
 
 #addDetail {
@@ -571,8 +615,13 @@ td > div {
 #detailsSummary > div {}
 
 #expandDetails {
-	float: left;
-	margin-left: 10px;
+	float: right;
+	margin-right: 10px;
+}
+
+#closeDetails {
+	float: right;
+	margin-right: 10px;
 }
 
 .hideDetail {
@@ -590,8 +639,8 @@ td > div {
 	font-weight: 1000;
 	align-items: flex-end;
 	position: absolute;
-	top: 500px;
-	left: 197px;
+	top: 600px;
+	left: 40px;
 	width: 970px;
 	background-color: rgba(245, 245, 220, 0.9);
 	border-radius: 5px;
@@ -724,7 +773,7 @@ td > div {
 /*SHOW HIDE DIVS SECTION*/
 #labelList {
 	padding-left: 20px;
-	
+
 }
 
 .opacityClass {
@@ -891,4 +940,54 @@ td > div {
 
 .dark-text {
 	color: #333333;
+}
+
+/*TEXT-EDITOR*/
+.intLink {
+	cursor: pointer;
+}
+
+img.intLink {
+	border: 0;
+}
+
+#toolBar1 select {
+/*	font-size: 10px;*/
+}
+
+#textBox {
+	width: 540px;
+	height: 200px;
+	border: 1px #000000 solid;
+	padding: 12px;
+	overflow: scroll;
+}
+
+#textBox #sourceText {
+	padding: 0;
+	margin: 0;
+	min-width: 498px;
+	min-height: 200px;
+}
+
+#editMode label {
+	cursor: pointer;
+}
+
+.intLink {
+}
+
+#editMode {
+	margin: 0;
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
+
+#editMode > label {
+	float: left;
+}
+
+#editMode > input {
+	width: 10px;
+	float: left;
 }

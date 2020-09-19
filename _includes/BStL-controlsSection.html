@@ -9,18 +9,22 @@
 			<div id="storylineTableEditorButtonsMenu" class="">
 
 				<div class="titleDiv">
-					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'E')" title="StoryLine Editor and Format">&#9776;</button>
-					<h3  id="storylineTableEditorMenuH3" class="titleBarH3">Editor
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
+					<h3 id="storylineTableEditorMenuH3" class="titleBarH3">Editor
 					</h3>
 
 				</div>
 
-				<button  class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
 					<span>Edit StoryLine</span>
 					<input id="editableRadio" type="checkbox" checked='true' value="editableRadio">
 				</button>
-				<button  class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
-					<span>Connect By Timelines</span>
+				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
+					<span>Detials/Notes</span>
+					<input id="detailsRadio" type="checkbox" checked='true' value="detailsRadio">
+				</button>
+				<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<span>Connection</span>
 					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
 				</button>
 			</div>
