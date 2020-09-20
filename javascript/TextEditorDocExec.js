@@ -8,14 +8,10 @@ detailsSummary.addEventListener('click', function () {
 		oDocID = currentSelection.id;
 		oDoc = document.getElementById(oDocID);
 
-		console.log('oDoc: ' + oDoc);
-
 		sDefTxt = oDoc.innerHTML;
-		console.log('sDefTxt: ' + sDefTxt);
 
 		if (oDoc.checked) {
 			setDocMode(true);
-			console.log('oDoc Checked');
 		}
 		runFunction = 1;
 	}

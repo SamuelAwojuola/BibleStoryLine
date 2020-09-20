@@ -204,7 +204,12 @@ function detailsEditButtons() {
 		customAlert('There is no EVENT to make notes for!')
 	}
 	//////////////////////////////////////////
-	//////////////////////////////////////////	
+	//////////////////////////////////////////
+}
+function makeCurrentDetailEditable(){
+		if(document.querySelector('.showDetail')){
+		document.querySelector('.showDetail').contentEditable = 'true';
+	}else { customAlert('There is No Note To Edit.')}
 }
 
 ///////////////////////////////////////////
